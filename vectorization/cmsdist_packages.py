@@ -10,7 +10,7 @@ if machine() == "x86_64":
     "zlib",
     "fastjet",
     "mkfit",
-    "vecgeom",
+    #"vecgeom",
     "tensorflow-sources",
     "tensorflow",
     "OpenBLAS",
@@ -21,8 +21,8 @@ if machine() == "x86_64":
     "haswell":     "-march=haswell",
   }
 
-def fix_vecgeom(vec, value):
-  return [(DEFAULT_VECTORIZED_FLAG.replace("-m", ""), value.replace("-m", ""))]
+#def fix_vecgeom(vec, value):
+#  return [(DEFAULT_VECTORIZED_FLAG.replace("-m", ""), value.replace("-m", ""))]
 
 def fix_OpenBLAS(vec, value):
   return [("TARGET=CORE2", "TARGET=%s" % vec.upper())]
